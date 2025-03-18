@@ -92,7 +92,7 @@
           &sys_reset   &trans     &trans     &trans    &bt BT_SEL 0   &out OUT_USB &trans    &trans     &trans    &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1   &out OUT_BLE &trans    &trans     &trans    &bootloader
+          &bootloader  &trans &studio_unlock &trans    &bt BT_SEL 1   &out OUT_BLE &trans &studio_unlock &trans   &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
             &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
