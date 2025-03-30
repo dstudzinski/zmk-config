@@ -59,7 +59,7 @@
             key-positions = <20 21>; // z+x
             bindings = <&kp LCTRL>;
         };
-        combo_lctrl {
+        combo_rctrl {
             timeout-ms = <50>;
             key-positions = <28 29>; // .+/
             bindings = <&kp RCTRL>;
