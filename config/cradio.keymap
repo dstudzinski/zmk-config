@@ -7,65 +7,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // Home row mods macro
-//#define HRML(k1,k2,k3,k4) &ht LSHFT k1 &ht LCTRL k2 &ht LALT k3   &ht LGUI k4
-//#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RALT k2  &ht RCTRL k3  &ht RSHFT k4
-//usage: HRML(A,        S,         D,         F)
+#define HRML(k1,k2,k3,k4) &ht LSHFT k1 &ht LCTRL k2 &ht LALT k3   &ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RALT k2  &ht RCTRL k3  &ht RSHFT k4
 
 / {
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>; // q+w
-            bindings = <&kp ESC>;
-        };
-        combo_bspc {
-            timeout-ms = <50>;
-            key-positions = <8 9>; // o+p
-            bindings = <&kp BSPC>;
-        };
-        combo_lshift {
-            timeout-ms = <50>;
-            key-positions = <10 11>; // a+s
-            bindings = <&kp LSHFT>;
-        };
-        combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <11 12>; // s+d
-            bindings = <&kp LALT>;
-        };
-        combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <12 13>; // d+f
-            bindings = <&kp LGUI>;
-        };
-        combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <16 17>; // j+k
-            bindings = <&kp RGUI>;
-        };
-        combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <17 18>; // k+l
-            bindings = <&kp RALT>;
-        };
-        combo_rshift {
-            timeout-ms = <50>;
-            key-positions = <18 19>; // l+'
-            bindings = <&kp RSHFT>;
-        };
-        combo_lctrl {
-            timeout-ms = <50>;
-            key-positions = <20 21>; // z+x
-            bindings = <&kp LCTRL>;
-        };
-        combo_rctrl {
-            timeout-ms = <50>;
-            key-positions = <28 29>; // .+/
-            bindings = <&kp RCTRL>;
-        };
-    };
-
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
@@ -96,7 +41,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
